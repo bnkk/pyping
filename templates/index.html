@@ -1,8 +1,14 @@
+<!-- 
+  ### Original JS radial engine created by https://github.com/tofuness 
+  ### Original repository: tofuness/eex
+  ### Python using FLASK_APP
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
   <title>Python Ping</title>
-  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="{{ url_for('static', filename='favicon.ico') }}" rel="shortcut icon" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Dosis:600|Roboto" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/static/reset.css"/>
@@ -117,7 +123,7 @@
     function ani() {
       document.getElementById("pinger").className = 'classname';
       setTimeout(() => {
-        var url = 'http://localhost:{{ port }}/ping/';
+        var url = 'http://{{ hostName }}:{{ port }}/ping/';
         var data = new FormData();
         data.append('ping', 'proposed')
 
@@ -126,7 +132,7 @@
         xhr.send(data);
         xhr.onreadystatechange = function(){
           if (xhr.readyState == 4 && xhr.status == 200) {
-            document.getElementById("about-title").innerHTML = '<div class="fadeup" style="opacity: 0;">Successfully Paged Server</div>';
+            document.getElementById("about-title").innerHTML = '<div class="fadeup" style="opacity: 0;">Successfully Pinged Server</div>';
             document.getElementById("about-row").innerHTML = '<div class="fadeup" style="opacity: 0;">I\'ll be over shortly</div>';
             
           } else {

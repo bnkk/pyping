@@ -1,4 +1,5 @@
 from flask import Flask, Response
+from flask.helpers import url_for
 from flask_cors import CORS
 from flask import render_template
 from flask import request
@@ -6,9 +7,10 @@ from playsound import playsound
 app = Flask(__name__, static_folder='templates/static')
 
 app.config['ENV'] = 'development'
+app.config['DEBUG'] = True
 
-hostName = '0.0.0.0'
-port = 8108
+hostName = '192.168.1.199' # Set to ip address or domain, CANNOT BE 0.0.0.0
+port = 8109 # Set port to bind to
 
 CORS(app)
 
@@ -16,6 +18,7 @@ def a(file):
     playsound(file)
 
 app.jinja_env.globals.update(port=port)
+app.jinja_env.globals.update(hostName=hostName)
 
 @app.route('/ping/', methods = ['GET', 'POST'])
 def page(name=None):
