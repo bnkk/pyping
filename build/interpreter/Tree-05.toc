@@ -1,0 +1,13 @@
+('G:\\Working\\Python '
+ 'Workspace\\pager\\.new\\build\\interpreter\\pyreadline-2.1-py3.9-win-amd64.egg',
+ None,
+ {'*.pyd', 'EGG-INFO', '*.pyw', '*.pyc', '*.cp39-win_amd64.pyd', '*.py'},
+ 'DATA',
+ [('pyreadline-2.1-py3.4.egg-info',
+   'G:\\Working\\Python '
+   'Workspace\\pager\\.new\\build\\interpreter\\pyreadline-2.1-py3.9-win-amd64.egg\\pyreadline-2.1-py3.4.egg-info',
+   'DATA'),
+  ('pyreadline\\configuration\\pyreadlineconfig.ini',
+   'G:\\Working\\Python '
+   'Workspace\\pager\\.new\\build\\interpreter\\pyreadline-2.1-py3.9-win-amd64.egg\\pyreadline\\configuration\\pyreadlineconfig.ini',
+   'DATA')])
